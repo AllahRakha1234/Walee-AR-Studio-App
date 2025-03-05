@@ -1,0 +1,50 @@
+{
+  "expo": {
+    "name": "app",
+    "slug": "app",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "newArchEnabled": true,
+    "splash": {
+      "image": "./assets/splash-icon.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "ios": {
+      "supportsTablet": true,
+      "infoPlist": {
+        "NSCameraUsageDescription": "We need camera access to take pictures",
+        "NSMicrophoneUsageDescription": "We need microphone access for video recording"
+      }
+    },
+    "android": {
+      "permissions": ["CAMERA", "RECORD_AUDIO"],
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#ffffff"
+      }
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "Allow app to access your camera to detect faces and take photos.",
+          "microphonePermission": "Allow app to access your microphone"
+        }
+      ],
+      [
+        "expo-media-library",
+        {
+          "photosPermission": "Allow app to save photos to your gallery.",
+          "savePhotosPermission": "Allow app to save photos to your gallery.",
+          "isAccessMediaLocationEnabled": true
+        }
+      ]
+    ]
+  }
+}
