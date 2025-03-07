@@ -116,7 +116,7 @@ const OpenCamera = () => {
       
       // Use ViewShot to capture the camera view with SVG overlay
       if (viewShotRef.current) {
-        console.log('Using ViewShot to capture landmarks');
+        console.log('Using ViewShot to capture landmarks of face.');
         try {
           const overlayUri = await viewShotRef.current.capture();
           console.log('Captured overlay:', overlayUri);
@@ -137,7 +137,7 @@ const OpenCamera = () => {
 
   const takePicture = async () => {
     if (!cameraRef.current) {
-      Alert.alert("Camera Error", "Camera is not ready. Please try again.");
+      Alert.alert("Camera Error", "Camera not ready. Please try again.");
       return;
     }
 

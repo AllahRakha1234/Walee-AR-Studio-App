@@ -20,7 +20,10 @@
       }
     },
     "android": {
-      "permissions": ["CAMERA", "RECORD_AUDIO"],
+      "permissions": [
+        "CAMERA",
+        "RECORD_AUDIO"
+      ],
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
@@ -44,7 +47,8 @@
           "savePhotosPermission": "Allow app to save photos to your gallery.",
           "isAccessMediaLocationEnabled": true
         }
-      ]
+      ],
+      "expo-asset"
     ]
   }
 }
