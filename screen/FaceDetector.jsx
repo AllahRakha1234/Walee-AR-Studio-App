@@ -25,7 +25,7 @@ const FaceDetectorScreen = () => {
 
       // First, get the image URI using Image.resolveAssetSource
       const resolvedAsset = Image.resolveAssetSource(imageSource);
-      console.log('Resolved asset:', resolvedAsset);
+      console.log('Resolved assets:', resolvedAsset);
 
       // Create a temporary file path
       const tempDirectory = FileSystem.cacheDirectory;
@@ -37,7 +37,7 @@ const FaceDetectorScreen = () => {
         tempFilePath
       );
 
-      console.log('Processing image at:', tempFilePath);
+      console.log('Processing image at paht:', tempFilePath);
 
       // Process the image to detect faces
       const options = {
@@ -51,7 +51,7 @@ const FaceDetectorScreen = () => {
       const result = await FaceDetector.detectFacesAsync(tempFilePath, options);
 
       if (result.faces && result.faces.length > 0) {
-        console.log('Face detected in image:', result.faces[0]);
+        console.log('Detected face in image:', result.faces[0]);
         setFaceLandmarks(result.faces[0]);
         
         // Capture the view with landmarks if available
