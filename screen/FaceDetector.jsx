@@ -13,7 +13,7 @@ const FaceDetectorScreen = () => {
   const viewShotRef = React.useRef(null);
   
   // Reference the image
-  const imageSource = require('./assets/ar.jpg');
+  const imageSourcePath = require('./assets/img.jpg');
 
   useEffect(() => {
     prepareAndDetectFace();
@@ -24,7 +24,7 @@ const FaceDetectorScreen = () => {
       setProcessing(true);
 
       // First, get the image URI using Image.resolveAssetSource
-      const resolvedAsset = Image.resolveAssetSource(imageSource);
+      const resolvedAsset = Image.resolveAssetSource(imageSourcePath);
       console.log('Resolved assets:', resolvedAsset);
 
       // Create a temporary file path
@@ -183,7 +183,7 @@ const FaceDetectorScreen = () => {
     >
       <View style={styles.container}>
         <Image 
-          source={imageSource}
+          source={imageSourcePath}
           style={styles.image}
           resizeMode="contain"
         />
