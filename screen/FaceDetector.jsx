@@ -51,8 +51,8 @@ const FaceDetectorScreen = () => {
       const result = await FaceDetector.detectFacesAsync(tempFilePath, options);
 
       if (result.faces && result.faces.length > 0) {
-        console.log('Detected face in image:', result.faces[0]);
         setFaceLandmarks(result.faces[0]);
+        console.log('Detected face in image:', result.faces[0]);
         
         // Capture the view with landmarks if available
         if (viewShotRef.current) {
@@ -60,14 +60,14 @@ const FaceDetectorScreen = () => {
           saveToGallery(processedUri);
         }
       } else {
-        Alert.alert("No Face Detected", "Could not detect any faces in this image");
+        Alert.alert("No Face Detected", "Couldn't detect any faces in this image");
       }
 
       // Clean up the temporary file
       await FileSystem.deleteAsync(tempFilePath, { idempotent: true });
 
     } catch (error) {
-      console.error('Face detection error:', error);
+      console.error('Face Detection error:', error);
       Alert.alert("Error", "Failed to process image: " + error.message);
     } finally {
       setProcessing(false);
