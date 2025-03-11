@@ -104,7 +104,7 @@ const FaceDetectorScreen = () => {
             width={bounds.size.width}
             height={bounds.size.height}
             stroke="yellow"
-            strokeWidth="2"
+            strokeWidth="3"
             fill="transparent"
           />
           
@@ -113,7 +113,7 @@ const FaceDetectorScreen = () => {
             <Circle
               cx={faceLandmarks.leftEyePosition.x}
               cy={faceLandmarks.leftEyePosition.y}
-              r="5"
+              r="6"
               fill="blue"
             />
           )}
@@ -224,7 +224,7 @@ const styles = StyleSheet.create({
     bottom: 30,
     alignSelf: 'center',
     backgroundColor: 'rgba(0, 0, 0, 0.7)',
-    padding: 15,
+    padding: 10,
     borderRadius: 10,
   },
   buttonText: {
