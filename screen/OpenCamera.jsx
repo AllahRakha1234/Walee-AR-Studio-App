@@ -150,7 +150,7 @@ const OpenCamera = () => {
         skipProcessing: false,
       });
       
-      console.log('Photo taken:', photo.uri);
+      console.log('Photo Taken:', photo.uri);
       setCapturedImage(photo.uri);
       
       // Process image with landmarks if face was detected
@@ -269,7 +269,7 @@ const OpenCamera = () => {
             y={bounds.origin.y}
             width={bounds.size.width}
             height={bounds.size.height}
-            stroke="yellow"
+            stroke="red"
             strokeWidth="2"
             fill="transparent"
           />
@@ -332,7 +332,7 @@ const OpenCamera = () => {
               y1={faceLandmarks.noseBasePosition.y}
               x2={faceLandmarks.rightEyePosition.x}
               y2={faceLandmarks.rightEyePosition.y}
-              stroke="yellow"
+              stroke="red"
               strokeWidth="2"
             />
           )}
@@ -504,7 +504,7 @@ const styles = StyleSheet.create({
   },
   overlay: {
     position: 'absolute',
-    top: 50,
+    top: 60,
     left: 0,
     right: 0,
     alignItems: 'center',
@@ -518,7 +518,7 @@ const styles = StyleSheet.create({
   },
   buttonContainer: {
     position: 'absolute',
-    bottom: 50,
+    bottom: 52,
     alignSelf: 'center',
   },
   captureButton: {
