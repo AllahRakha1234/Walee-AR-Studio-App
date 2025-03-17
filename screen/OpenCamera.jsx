@@ -599,7 +599,7 @@ const styles = StyleSheet.create({
   },
   permissionText: {
     color: 'white',
-    fontSize: 18,
+    fontSize: 16,
     marginBottom: 20,
     textAlign: 'center',
   },
@@ -616,8 +616,8 @@ const styles = StyleSheet.create({
   // Improved styles for the flip camera button
   flipButton: {
     position: 'absolute',
-    top: 40,
-    right: 20,
+    top: 45,
+    right: 25,
     backgroundColor: 'rgba(0, 0, 0, 0.8)',
     padding: 12,
     borderRadius: 25,
