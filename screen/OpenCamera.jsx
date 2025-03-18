@@ -585,10 +585,10 @@ const styles = StyleSheet.create({
   },
   landmarksSvg: {
     position: 'absolute',
-    top: 0,
-    left: 0,
-    right: 0,
-    bottom: 0,
+    top: 2,
+    left: 2,
+    right: 2,
+    bottom: 2,
   },
   permissionContainer: {
     flex: 1,
