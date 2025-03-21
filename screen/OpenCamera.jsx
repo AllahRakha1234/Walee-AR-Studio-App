@@ -269,7 +269,7 @@ const OpenCamera = () => {
             y={bounds.origin.y}
             width={bounds.size.width}
             height={bounds.size.height}
-            stroke="red"
+            stroke="blue"
             strokeWidth="2"
             fill="transparent"
           />
@@ -504,17 +504,17 @@ const styles = StyleSheet.create({
   },
   overlay: {
     position: 'absolute',
-    top: 60,
+    top: 50,
     left: 0,
     right: 0,
     alignItems: 'center',
   },
   text: {
     color: 'white',
-    fontSize: 24,
+    fontSize: 20,
     backgroundColor: 'rgba(0,0,0,0.5)',
     padding: 10,
-    borderRadius: 5,
+    borderRadius: 10,
   },
   buttonContainer: {
     position: 'absolute',
