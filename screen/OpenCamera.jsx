@@ -524,7 +524,7 @@ const styles = StyleSheet.create({
   captureButton: {
     width: 70,
     height: 70,
-    borderRadius: 35,
+    borderRadius: 30,
     backgroundColor: 'rgba(255, 255, 255, 0.3)',
     justifyContent: 'center',
     alignItems: 'center',
@@ -533,8 +533,8 @@ const styles = StyleSheet.create({
     opacity: 0.5,
   },
   buttonInner: {
-    width: 60,
-    height: 60,
+    width: 55,
+    height: 55,
     borderRadius: 30,
     backgroundColor: 'white',
   },
@@ -554,9 +554,9 @@ const styles = StyleSheet.create({
   },
   button: {
     backgroundColor: 'rgba(0, 0, 0, 0.7)',
-    padding: 15,
+    padding: 18,
     borderRadius: 10,
-    marginHorizontal: 10,
+    marginHorizontal: 12,
   },
   buttonText: {
     color: 'white',
