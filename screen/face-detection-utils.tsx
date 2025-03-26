@@ -4,7 +4,7 @@ export const analyzeFaceDetectionResult = (result) => {
     if (!result || !result.faces) {
       return {
         detected: false,
-        message: "No face data received",
+        message: "No face data received!",
         details: null,
       }
     }
@@ -12,7 +12,7 @@ export const analyzeFaceDetectionResult = (result) => {
     if (result.faces.length === 0) {
       return {
         detected: false,
-        message: "No faces detected in frame",
+        message: "No faces detected in frame!",
         details: null,
       }
     }

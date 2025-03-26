@@ -221,10 +221,10 @@ const styles = StyleSheet.create({
   },
   button: {
     position: 'absolute',
-    bottom: 30,
+    bottom: 32,
     alignSelf: 'center',
     backgroundColor: 'rgba(0, 0, 0, 0.7)',
-    padding: 10,
+    padding: 12,
     borderRadius: 10,
   },
   buttonText: {
@@ -257,10 +257,10 @@ const styles = StyleSheet.create({
   },
   statusText: {
     color: 'white',
-    fontSize: 18,
+    fontSize: 20,
     backgroundColor: 'rgba(0, 0, 0, 0.7)',
     padding: 10,
-    borderRadius: 5,
+    borderRadius: 6,
   }
 });
 
