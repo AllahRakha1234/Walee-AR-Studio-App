@@ -229,10 +229,10 @@ const styles = StyleSheet.create({
   },
   buttonText: {
     color: 'white',
-    fontSize: 16,
+    fontSize: 14,
   },
   disabledButton: {
-    opacity: 0.5,
+    opacity: 0.6,
   },
   landmarksOverlayContainer: {
     position: 'absolute',
@@ -251,8 +251,8 @@ const styles = StyleSheet.create({
   statusContainer: {
     position: 'absolute',
     top: 40,
-    left: 0,
-    right: 0,
+    left: 2,
+    right: 2,
     alignItems: 'center',
   },
   statusText: {
