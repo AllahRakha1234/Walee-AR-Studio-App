@@ -224,12 +224,12 @@ const styles = StyleSheet.create({
     bottom: 32,
     alignSelf: 'center',
     backgroundColor: 'rgba(0, 0, 0, 0.7)',
-    padding: 12,
+    padding: 14,
     borderRadius: 10,
   },
   buttonText: {
     color: 'white',
-    fontSize: 14,
+    fontSize: 16,
   },
   disabledButton: {
     opacity: 0.7,
@@ -250,16 +250,16 @@ const styles = StyleSheet.create({
   },
   statusContainer: {
     position: 'absolute',
-    top: 42,
+    top: 40,
     left: 4,
     right: 4,
     alignItems: 'center',
   },
   statusText: {
-    color: 'white',
+    color: 'red',
     fontSize: 18,
     backgroundColor: 'rgba(0, 0, 0, 0.7)',
-    padding: 8,
+    padding: 10,
     borderRadius: 6,
   }
 });
