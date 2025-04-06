@@ -504,7 +504,7 @@ const styles = StyleSheet.create({
   },
   overlay: {
     position: 'absolute',
-    top: 50,
+    top: 52,
     left: 0,
     right: 0,
     alignItems: 'center',
@@ -512,7 +512,7 @@ const styles = StyleSheet.create({
   text: {
     color: 'white',
     fontSize: 20,
-    backgroundColor: 'rgba(0,0,0,0.5)',
+    backgroundColor: 'rgba(0,0,0,0.6)',
     padding: 10,
     borderRadius: 10,
   },
@@ -522,8 +522,8 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
   },
   captureButton: {
-    width: 70,
-    height: 70,
+    width: 72,
+    height: 72,
     borderRadius: 30,
     backgroundColor: 'rgba(255, 255, 255, 0.3)',
     justifyContent: 'center',
@@ -546,7 +546,7 @@ const styles = StyleSheet.create({
   },
   capturedButtonsContainer: {
     position: 'absolute',
-    bottom: 30,
+    bottom: 28,
     flexDirection: 'row',
     justifyContent: 'space-around',
     width: '100%',
