@@ -554,13 +554,13 @@ const styles = StyleSheet.create({
   },
   button: {
     backgroundColor: 'rgba(0, 0, 0, 0.7)',
-    padding: 18,
+    padding: 20,
     borderRadius: 10,
     marginHorizontal: 12,
   },
   buttonText: {
     color: 'white',
-    fontSize: 16,
+    fontSize: 18,
   },
   landmarkScroll: {
     position: 'absolute',
@@ -573,7 +573,7 @@ const styles = StyleSheet.create({
   },
   landmarkText: {
     color: 'white',
-    fontSize: 12,
+    fontSize: 10,
     marginBottom: 5,
   },
   landmarksOverlayContainer: {
@@ -585,8 +585,8 @@ const styles = StyleSheet.create({
   },
   landmarksSvg: {
     position: 'absolute',
-    top: 2,
-    left: 2,
+    top: 0,
+    left: 0,
     right: 2,
     bottom: 2,
   },
