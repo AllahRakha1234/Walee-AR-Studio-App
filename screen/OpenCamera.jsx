@@ -530,7 +530,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   disabledButton: {
-    opacity: 0.5,
+    opacity: 0.8,
   },
   buttonInner: {
     width: 55,
@@ -554,7 +554,7 @@ const styles = StyleSheet.create({
   },
   button: {
     backgroundColor: 'rgba(0, 0, 0, 0.7)',
-    padding: 20,
+    padding: 18,
     borderRadius: 10,
     marginHorizontal: 12,
   },
@@ -585,8 +585,8 @@ const styles = StyleSheet.create({
   },
   landmarksSvg: {
     position: 'absolute',
-    top: 0,
-    left: 0,
+    top: 2,
+    left: 2,
     right: 2,
     bottom: 2,
   },
