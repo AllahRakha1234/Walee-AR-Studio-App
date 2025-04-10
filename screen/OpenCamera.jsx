@@ -522,19 +522,19 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
   },
   captureButton: {
-    width: 72,
-    height: 72,
+    width: 70,
+    height: 70,
     borderRadius: 30,
     backgroundColor: 'rgba(255, 255, 255, 0.3)',
     justifyContent: 'center',
     alignItems: 'center',
   },
   disabledButton: {
-    opacity: 0.8,
+    opacity: 0.6,
   },
   buttonInner: {
-    width: 55,
-    height: 55,
+    width: 52,
+    height: 52,
     borderRadius: 30,
     backgroundColor: 'white',
   },
@@ -554,7 +554,7 @@ const styles = StyleSheet.create({
   },
   button: {
     backgroundColor: 'rgba(0, 0, 0, 0.7)',
-    padding: 18,
+    padding: 16,
     borderRadius: 10,
     marginHorizontal: 12,
   },
