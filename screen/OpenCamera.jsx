@@ -525,7 +525,7 @@ const styles = StyleSheet.create({
     width: 70,
     height: 70,
     borderRadius: 30,
-    backgroundColor: 'rgba(255, 255, 255, 0.3)',
+    backgroundColor: 'rgba(255, 255, 255, 0.6)',
     justifyContent: 'center',
     alignItems: 'center',
   },
@@ -560,7 +560,7 @@ const styles = StyleSheet.create({
   },
   buttonText: {
     color: 'white',
-    fontSize: 18,
+    fontSize: 16,
   },
   landmarkScroll: {
     position: 'absolute',
@@ -568,12 +568,12 @@ const styles = StyleSheet.create({
     right: 20,
     maxHeight: 200,
     backgroundColor: 'rgba(0, 0, 0, 0.7)',
-    padding: 10,
+    padding: 12,
     borderRadius: 10,
   },
   landmarkText: {
-    color: 'white',
-    fontSize: 10,
+    color: 'red',
+    fontSize: 12,
     marginBottom: 5,
   },
   landmarksOverlayContainer: {
@@ -636,7 +636,7 @@ const styles = StyleSheet.create({
     bottom: 150,
     left: 20,
     backgroundColor: 'rgba(0, 0, 0, 0.8)',
-    padding: 12,
+    padding: 10,
     borderRadius: 5,
   },
   debugText: {
