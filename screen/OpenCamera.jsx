@@ -375,7 +375,7 @@ const OpenCamera = () => {
   if (hasPermission === false) {
     return (
       <View style={styles.permissionContainer}>
-        <Text style={styles.permissionText}>Camera permission not granted</Text>
+        <Text style={styles.permissionText}>Camera permission is not granted</Text>
         <TouchableOpacity
           style={styles.button}
           onPress={() => Alert.alert(
@@ -459,7 +459,7 @@ const OpenCamera = () => {
             style={styles.flipButton}
             onPress={flipCamera}
           >
-            <Text style={styles.flipButtonText}>🔄 Flip Camera</Text>
+            <Text style={styles.flipButtonText}>Flip Camera 🔄</Text>
           </TouchableOpacity>
           
           {/* Enhanced debug indicator for face detection status */}
@@ -554,13 +554,13 @@ const styles = StyleSheet.create({
   },
   button: {
     backgroundColor: 'rgba(0, 0, 0, 0.7)',
-    padding: 16,
+    padding: 12,
     borderRadius: 10,
     marginHorizontal: 12,
   },
   buttonText: {
     color: 'white',
-    fontSize: 16,
+    fontSize: 14,
   },
   landmarkScroll: {
     position: 'absolute',
