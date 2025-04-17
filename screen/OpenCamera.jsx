@@ -530,7 +530,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   disabledButton: {
-    opacity: 0.6,
+    opacity: 0.8,
   },
   buttonInner: {
     width: 52,
@@ -554,7 +554,7 @@ const styles = StyleSheet.create({
   },
   button: {
     backgroundColor: 'rgba(0, 0, 0, 0.7)',
-    padding: 12,
+    padding: 10,
     borderRadius: 10,
     marginHorizontal: 12,
   },
@@ -573,8 +573,8 @@ const styles = StyleSheet.create({
   },
   landmarkText: {
     color: 'red',
-    fontSize: 12,
-    marginBottom: 5,
+    fontSize: 14,
+    marginBottom: 6,
   },
   landmarksOverlayContainer: {
     position: 'absolute',
