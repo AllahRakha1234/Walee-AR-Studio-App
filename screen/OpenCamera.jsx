@@ -511,9 +511,9 @@ const styles = StyleSheet.create({
   },
   text: {
     color: 'white',
-    fontSize: 20,
+    fontSize: 16,
     backgroundColor: 'rgba(0,0,0,0.6)',
-    padding: 10,
+    padding: 12,
     borderRadius: 10,
   },
   buttonContainer: {
@@ -525,16 +525,16 @@ const styles = StyleSheet.create({
     width: 70,
     height: 70,
     borderRadius: 30,
-    backgroundColor: 'rgba(255, 255, 255, 0.6)',
+    backgroundColor: 'rgba(255, 255, 255, 0.8)',
     justifyContent: 'center',
     alignItems: 'center',
   },
   disabledButton: {
-    opacity: 0.8,
+    opacity: 0.6,
   },
   buttonInner: {
-    width: 52,
-    height: 52,
+    width: 50,
+    height: 50,
     borderRadius: 30,
     backgroundColor: 'white',
   },
