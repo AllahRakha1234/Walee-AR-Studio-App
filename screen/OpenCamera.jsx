@@ -6,6 +6,7 @@ import Svg, { Circle, Line, Rect } from 'react-native-svg';
 import * as FileSystem from 'expo-file-system';
 import * as ImageManipulator from 'expo-image-manipulator';
 import ViewShot from 'react-native-view-shot';
+import * as FaceDetector from 'expo-face-detector';
 
 const OpenCamera = () => {
   const [hasPermission, setHasPermission] = useState(null);
@@ -58,6 +59,16 @@ const OpenCamera = () => {
     console.log('Camera device changed to:', cameraDevice);
   }, [cameraDevice]);
 
+  useEffect(() => {
+    console.log('Camera initialized with face detection settings:', {
+      mode: 'accurate',
+      detectLandmarks: 'all',
+      runClassifications: 'all',
+      minDetectionInterval: 100,
+      tracking: true
+    });
+  }, []);
+
   const flipCamera = () => {
     setCameraDevice(prevDevice => {
       const newDevice = prevDevice === "front" ? "back" : "front";
@@ -68,23 +79,37 @@ const OpenCamera = () => {
 
   const onFacesDetected = (result) => {
     try {
+      console.log('Face Detection Raw Result:', {
+        hasResult: !!result,
+        resultType: typeof result,
+        facesCount: result?.faces?.length || 0,
+        rawData: result
+      });
+      
       if (result?.faces && result.faces.length > 0) {
-        // Log the detected face data with more detail
-        console.log('Face detected! Data length:', JSON.stringify(result.faces).length);
-        console.log('Face details:', JSON.stringify(result.faces[0], null, 2));
+        const face = result.faces[0];
+        console.log('Face Detection Details:', {
+          hasBounds: !!face.bounds,
+          boundsType: typeof face.bounds,
+          boundsData: face.bounds,
+          hasLeftEye: !!face.leftEyePosition,
+          hasRightEye: !!face.rightEyePosition,
+          hasNose: !!face.noseBasePosition,
+          leftEye: face.leftEyePosition,
+          rightEye: face.rightEyePosition,
+          nose: face.noseBasePosition
+        });
         
-        // Make sure we have valid landmark data
-        if (result.faces[0].bounds) {
+        if (face.bounds) {
           setFaceDetected(true);
-          setFaceLandmarks(result.faces[0]);
+          setFaceLandmarks(face);
+          console.log('Face Landmarks Set:', face);
         } else {
-          console.log('Face detected but missing required landmark data');
+          console.log('Face detected but missing bounds data');
           setFaceDetected(false);
         }
       } else {
-        if (faceDetected) {
-          console.log('Face lost - no faces in current frame');
-        }
+        console.log('No faces detected in current frame');
         setFaceDetected(false);
         setFaceLandmarks(null);
       }
@@ -143,92 +168,69 @@ const OpenCamera = () => {
 
     try {
       setProcessingImage(true);
+      console.log('Taking Picture - Current Face Detection State:', {
+        faceDetected,
+        hasLandmarks: !!faceLandmarks,
+        landmarksData: faceLandmarks
+      });
       
-      // Capture photo from camera
       const photo = await cameraRef.current.takePictureAsync({
         quality: 1,
         skipProcessing: false,
       });
       
-      console.log('Photo Taken:', photo.uri);
+      console.log('Photo Captured:', photo.uri);
       setCapturedImage(photo.uri);
-      
-      // Process image with landmarks if face was detected
-      if (faceDetected && faceLandmarks) {
-        console.log('Face landmarks available, processing image with landmarks...');
+
+      // Process the image to detect faces
+      const options = {
+        mode: FaceDetector.FaceDetectorMode.fast,
+        detectLandmarks: FaceDetector.FaceDetectorLandmarks.all,
+        runClassifications: FaceDetector.FaceDetectorClassifications.all,
+        minDetectionInterval: 0,
+        tracking: false,
+      };
+
+      console.log('Processing image for face detection:', photo.uri);
+      const result = await FaceDetector.detectFacesAsync(photo.uri, options);
+      console.log('Face Detection Result:', result);
+
+      if (result.faces && result.faces.length > 0) {
+        const face = result.faces[0];
+        console.log('Detected face in image:', face);
+        setFaceDetected(true);
+        setFaceLandmarks(face);
         
         try {
-          // Capture the entire view with overlay using ViewShot
+          // Capture the view with landmarks if available
           if (viewShotRef.current) {
-            try {
-              const overlayUri = await viewShotRef.current.capture();
-              console.log('ViewShot captured with landmarks:', overlayUri);
-              setImageWithLandmarks(overlayUri);
-              
-              // Save the image with landmarks to gallery
-              const asset = await MediaLibrary.createAssetAsync(overlayUri);
-              console.log('Saved image with landmarks to gallery:', asset);
-              
-              // Add a slight delay to ensure the UI reflects the capture before showing alert
-              setTimeout(() => {
-                Alert.alert("Success", "Photo with facial landmarks captured and saved to gallery!");
-              }, 500);
-              
-              setProcessingImage(false);
-              return;
-            } catch (viewShotError) {
-              console.error('ViewShot error:', viewShotError);
-              // Fall back to original approach
-            }
+            const processedUri = await viewShotRef.current.capture();
+            console.log('ViewShot captured with landmarks:', processedUri);
+            setImageWithLandmarks(processedUri);
+            
+            // Save the image with landmarks to gallery
+            const asset = await MediaLibrary.createAssetAsync(processedUri);
+            console.log('Saved image with landmarks to gallery:', asset);
+            
+            Alert.alert("Success", "Photo with facial landmarks captured and saved to gallery!");
           }
-          
-          // If ViewShot failed, use our original approach
-          const processedImageUri = await drawLandmarksOnImage(photo.uri, faceLandmarks);
-          setImageWithLandmarks(processedImageUri);
-          
-          // Save to device gallery
-          const asset = await MediaLibrary.createAssetAsync(processedImageUri);
-          console.log('Saved to gallery:', asset);
-          
-          // Add a slight delay before showing the alert
-          setTimeout(() => {
-            Alert.alert("Success", "Photo captured and saved to gallery!");
-          }, 500);
-        } catch (saveError) {
-          console.error('Error saving to gallery:', saveError);
-          Alert.alert(
-            "Save Error", 
-            "Failed to save photo to gallery. Please check app permissions.",
-            [{ text: "OK" }]
-          );
-        }
-      } else {
-        console.log('No face landmarks detected, saving original photo');
-        try {
-          // Save original photo if no landmarks
+        } catch (viewShotError) {
+          console.error('ViewShot error:', viewShotError);
+          // Fall back to original photo
           const asset = await MediaLibrary.createAssetAsync(photo.uri);
           console.log('Saved original photo to gallery:', asset);
-          
-          // Add a slight delay before showing the alert
-          setTimeout(() => {
-            Alert.alert("Success", "Photo captured and saved to gallery (no face detected)!");
-          }, 500);
-        } catch (saveError) {
-          console.error('Error saving original photo:', saveError);
-          Alert.alert(
-            "Save Error", 
-            "Failed to save original photo to gallery: " + saveError.message,
-            [{ text: "OK" }]
-          );
+          Alert.alert("Success", "Photo captured and saved to gallery!");
         }
+      } else {
+        console.log('No faces detected in captured image');
+        // Save original photo if no faces detected
+        const asset = await MediaLibrary.createAssetAsync(photo.uri);
+        console.log('Saved original photo to gallery:', asset);
+        Alert.alert("Success", "Photo captured and saved to gallery (no face detected)!");
       }
     } catch (error) {
       console.error('Error taking picture:', error);
-      Alert.alert(
-        "Camera Error", 
-        "Failed to take picture: " + error.message,
-        [{ text: "OK" }]
-      );
+      Alert.alert("Camera Error", "Failed to take picture: " + error.message);
     } finally {
       setProcessingImage(false);
     }
@@ -432,18 +434,20 @@ const OpenCamera = () => {
           style={styles.camera}
           onFacesDetected={onFacesDetected}
           faceDetectorSettings={{
-            mode: 'fast', // Changed from 'accurate' to 'fast' for better performance
-            detectLandmarks: 'all',
-            runClassifications: 'all',
-            minDetectionInterval: 50, // Reduced for more responsive detection
-            tracking: true,
+            mode: FaceDetector.FaceDetectorMode.fast,
+            detectLandmarks: FaceDetector.FaceDetectorLandmarks.all,
+            runClassifications: FaceDetector.FaceDetectorClassifications.all,
+            minDetectionInterval: 0,
+            tracking: false,
           }}
-          // Try all these different props to see which one works for your version
-          device={cameraDevice}
-          type={cameraDevice} // Alternative prop name
-          cameraType={cameraDevice} // Alternative prop name
-          facing={cameraDevice} // Another alternative
-          enableFaceDetection={true} // Make sure this is explicitly true
+          type={cameraDevice}
+          enableFaceDetection={true}
+          onMountError={(error) => {
+            console.error('Camera mount error:', error);
+          }}
+          onCameraReady={() => {
+            console.log('Camera is ready for face detection');
+          }}
         >
           <View style={styles.overlay}>
             <Text style={styles.text}>
