@@ -561,131 +561,178 @@ const OpenCamera = () => {
                     y: point.y * scaleY
                   });
 
+                  // Helper function to interpolate between two points
+                  const interpolatePoints = (p1, p2, ratio) => ({
+                    x: p1.x + (p2.x - p1.x) * ratio,
+                    y: p1.y + (p2.y - p1.y) * ratio
+                  });
+
                   console.log('Scaling factors:', { scaleX, scaleY });
                   
                   return (
                     <>
-                      {/* Face bounds */}
-                      {faceLandmarks.bounds && (
-                        <Rect
-                          x={faceLandmarks.bounds.origin.x * scaleX}
-                          y={faceLandmarks.bounds.origin.y * scaleY}
-                          width={faceLandmarks.bounds.size.width * scaleX}
-                          height={faceLandmarks.bounds.size.height * scaleY}
-                          stroke="white"
-                          strokeWidth="2"
-                          fill="transparent"
-                        />
-                      )}
+                      {/* Create a more detailed face mesh */}
+                      {(() => {
+                        if (!faceLandmarks.LEFT_EYE || !faceLandmarks.RIGHT_EYE || 
+                            !faceLandmarks.NOSE_BASE || !faceLandmarks.LEFT_MOUTH || 
+                            !faceLandmarks.RIGHT_MOUTH || !faceLandmarks.BOTTOM_MOUTH) {
+                          return null;
+                        }
 
-                      {/* Eyes */}
-                      {faceLandmarks.LEFT_EYE && faceLandmarks.RIGHT_EYE && (
-                        <>
-                          {/* Left Eye */}
-                          {(() => {
-                            const leftEye = scalePoint(faceLandmarks.LEFT_EYE);
-                            const rightEye = scalePoint(faceLandmarks.RIGHT_EYE);
-                            return (
-                              <>
-                                <Circle
-                                  cx={leftEye.x}
-                                  cy={leftEye.y}
-                                  r="3"
-                                  fill="white"
-                                />
-                                <Circle
-                                  cx={rightEye.x}
-                                  cy={rightEye.y}
-                                  r="3"
-                                  fill="white"
-                                />
-                                <Line
-                                  x1={leftEye.x}
-                                  y1={leftEye.y}
-                                  x2={rightEye.x}
-                                  y2={rightEye.y}
-                                  stroke="white"
-                                  strokeWidth="1"
-                                />
-                              </>
-                            );
-                          })()}
-                        </>
-                      )}
-
-                      {/* Nose */}
-                      {faceLandmarks.NOSE_BASE && (() => {
+                        // Scale all base points
+                        const leftEye = scalePoint(faceLandmarks.LEFT_EYE);
+                        const rightEye = scalePoint(faceLandmarks.RIGHT_EYE);
                         const nose = scalePoint(faceLandmarks.NOSE_BASE);
-                        const leftEye = faceLandmarks.LEFT_EYE && scalePoint(faceLandmarks.LEFT_EYE);
-                        const rightEye = faceLandmarks.RIGHT_EYE && scalePoint(faceLandmarks.RIGHT_EYE);
-                        
-                        return (
-                          <>
-                            <Circle
-                              cx={nose.x}
-                              cy={nose.y}
-                              r="3"
-                              fill="white"
-                            />
-                            {leftEye && (
-                              <Line
-                                x1={leftEye.x}
-                                y1={leftEye.y}
-                                x2={nose.x}
-                                y2={nose.y}
-                                stroke="white"
-                                strokeWidth="1"
-                              />
-                            )}
-                            {rightEye && (
-                              <Line
-                                x1={rightEye.x}
-                                y1={rightEye.y}
-                                x2={nose.x}
-                                y2={nose.y}
-                                stroke="white"
-                                strokeWidth="1"
-                              />
-                            )}
-                          </>
-                        );
-                      })()}
-
-                      {/* Mouth */}
-                      {faceLandmarks.LEFT_MOUTH && faceLandmarks.RIGHT_MOUTH && faceLandmarks.BOTTOM_MOUTH && (() => {
                         const leftMouth = scalePoint(faceLandmarks.LEFT_MOUTH);
                         const rightMouth = scalePoint(faceLandmarks.RIGHT_MOUTH);
                         const bottomMouth = scalePoint(faceLandmarks.BOTTOM_MOUTH);
-                        
+                        const leftCheek = faceLandmarks.LEFT_CHEEK ? scalePoint(faceLandmarks.LEFT_CHEEK) : null;
+                        const rightCheek = faceLandmarks.RIGHT_CHEEK ? scalePoint(faceLandmarks.RIGHT_CHEEK) : null;
+
+                        // Calculate additional mesh points
+                        const foreheadCenter = {
+                          x: (leftEye.x + rightEye.x) / 2,
+                          y: leftEye.y - (rightEye.x - leftEye.x) * 0.5
+                        };
+
+                        const leftTemple = {
+                          x: leftEye.x - (rightEye.x - leftEye.x) * 0.3,
+                          y: leftEye.y
+                        };
+
+                        const rightTemple = {
+                          x: rightEye.x + (rightEye.x - leftEye.x) * 0.3,
+                          y: rightEye.y
+                        };
+
+                        // Generate mesh points
+                        const meshPoints = [];
+                        const meshLines = [];
+
+                        // Add forehead points
+                        for (let i = 0; i <= 4; i++) {
+                          const ratio = i / 4;
+                          meshPoints.push(interpolatePoints(leftTemple, rightTemple, ratio));
+                        }
+
+                        // Add eye region points
+                        const leftEyebrowOuter = { x: leftEye.x - 20 * scaleX, y: leftEye.y - 15 * scaleY };
+                        const leftEyebrowInner = { x: leftEye.x + 20 * scaleX, y: leftEye.y - 15 * scaleY };
+                        const rightEyebrowInner = { x: rightEye.x - 20 * scaleX, y: rightEye.y - 15 * scaleY };
+                        const rightEyebrowOuter = { x: rightEye.x + 20 * scaleX, y: rightEye.y - 15 * scaleY };
+
+                        meshPoints.push(leftEyebrowOuter, leftEyebrowInner, rightEyebrowInner, rightEyebrowOuter);
+
+                        // Add cheek points
+                        const leftCheekPoints = [];
+                        const rightCheekPoints = [];
+                        for (let i = 0; i <= 2; i++) {
+                          const ratio = i / 2;
+                          leftCheekPoints.push(interpolatePoints(leftEye, leftMouth, ratio));
+                          rightCheekPoints.push(interpolatePoints(rightEye, rightMouth, ratio));
+                        }
+
+                        // Generate mesh lines
+                        const addLine = (p1, p2) => {
+                          meshLines.push(
+                            <Line
+                              key={`${Math.round(p1.x)}_${Math.round(p1.y)}_${Math.round(p2.x)}_${Math.round(p2.y)}_${meshLines.length}`}
+                              x1={p1.x}
+                              y1={p1.y}
+                              x2={p2.x}
+                              y2={p2.y}
+                              stroke="white"
+                              strokeWidth="1"
+                              opacity="0.7"
+                            />
+                          );
+                        };
+
+                        // Connect forehead mesh
+                        for (let i = 0; i < meshPoints.length - 1; i++) {
+                          addLine(meshPoints[i], meshPoints[i + 1]);
+                        }
+
+                        // Connect eyebrows to eyes
+                        addLine(leftEyebrowOuter, leftEye);
+                        addLine(leftEyebrowInner, leftEye);
+                        addLine(rightEyebrowInner, rightEye);
+                        addLine(rightEyebrowOuter, rightEye);
+
+                        // Connect eyes to nose
+                        addLine(leftEye, nose);
+                        addLine(rightEye, nose);
+
+                        // Connect nose to mouth
+                        addLine(nose, leftMouth);
+                        addLine(nose, rightMouth);
+                        addLine(nose, bottomMouth);
+
+                        // Connect mouth points
+                        addLine(leftMouth, rightMouth);
+                        addLine(leftMouth, bottomMouth);
+                        addLine(rightMouth, bottomMouth);
+
+                        // Connect cheek mesh
+                        leftCheekPoints.forEach((point, idx) => {
+                          if (idx < leftCheekPoints.length - 1) {
+                            addLine(point, leftCheekPoints[idx + 1]);
+                          }
+                          // Add unique identifier for left cheek connections
+                          meshLines.push(
+                            <Line
+                              key={`leftCheek_${idx}_${Math.round(point.x)}_${Math.round(point.y)}`}
+                              x1={point.x}
+                              y1={point.y}
+                              x2={nose.x}
+                              y2={nose.y}
+                              stroke="white"
+                              strokeWidth="1"
+                              opacity="0.7"
+                            />
+                          );
+                        });
+
+                        rightCheekPoints.forEach((point, idx) => {
+                          if (idx < rightCheekPoints.length - 1) {
+                            addLine(point, rightCheekPoints[idx + 1]);
+                          }
+                          // Add unique identifier for right cheek connections
+                          meshLines.push(
+                            <Line
+                              key={`rightCheek_${idx}_${Math.round(point.x)}_${Math.round(point.y)}`}
+                              x1={point.x}
+                              y1={point.y}
+                              x2={nose.x}
+                              y2={nose.y}
+                              stroke="white"
+                              strokeWidth="1"
+                              opacity="0.7"
+                            />
+                          );
+                        });
+
                         return (
                           <>
+                            {meshLines}
+                            {/* Render points */}
+                            {[...meshPoints, ...leftCheekPoints, ...rightCheekPoints].map((point, index) => (
+                              <Circle
+                                key={`point_${index}_${Math.round(point.x)}_${Math.round(point.y)}`}
+                                cx={point.x}
+                                cy={point.y}
+                                r="2"
+                                fill="white"
+                                opacity="0.7"
+                              />
+                            ))}
+                            {/* Main landmark points */}
+                            <Circle cx={leftEye.x} cy={leftEye.y} r="3" fill="white" />
+                            <Circle cx={rightEye.x} cy={rightEye.y} r="3" fill="white" />
+                            <Circle cx={nose.x} cy={nose.y} r="3" fill="white" />
                             <Circle cx={leftMouth.x} cy={leftMouth.y} r="3" fill="white" />
                             <Circle cx={rightMouth.x} cy={rightMouth.y} r="3" fill="white" />
                             <Circle cx={bottomMouth.x} cy={bottomMouth.y} r="3" fill="white" />
-                            <Line
-                              x1={leftMouth.x}
-                              y1={leftMouth.y}
-                              x2={rightMouth.x}
-                              y2={rightMouth.y}
-                              stroke="white"
-                              strokeWidth="1"
-                            />
-                            <Line
-                              x1={leftMouth.x}
-                              y1={leftMouth.y}
-                              x2={bottomMouth.x}
-                              y2={bottomMouth.y}
-                              stroke="white"
-                              strokeWidth="1"
-                            />
-                            <Line
-                              x1={rightMouth.x}
-                              y1={rightMouth.y}
-                              x2={bottomMouth.x}
-                              y2={bottomMouth.y}
-                              stroke="white"
-                              strokeWidth="1"
-                            />
                           </>
                         );
                       })()}
