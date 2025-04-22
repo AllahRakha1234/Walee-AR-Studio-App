@@ -863,16 +863,16 @@ const styles = StyleSheet.create({
   },
   overlay: {
     position: 'absolute',
-    top: 52,
-    left: 0,
+    top: 50,
+    left: 2,
     right: 0,
     alignItems: 'center',
   },
   text: {
     color: 'white',
-    fontSize: 16,
+    fontSize: 14,
     backgroundColor: 'rgba(0,0,0,0.6)',
-    padding: 12,
+    padding: 10,
     borderRadius: 10,
   },
   buttonContainer: {
@@ -889,7 +889,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   disabledButton: {
-    opacity: 0.6,
+    opacity: 0.8,
   },
   buttonInner: {
     width: 50,
