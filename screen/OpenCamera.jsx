@@ -865,12 +865,12 @@ const styles = StyleSheet.create({
     position: 'absolute',
     top: 50,
     left: 2,
-    right: 0,
+    right: 2,
     alignItems: 'center',
   },
   text: {
     color: 'white',
-    fontSize: 14,
+    fontSize: 16,
     backgroundColor: 'rgba(0,0,0,0.6)',
     padding: 10,
     borderRadius: 10,
@@ -889,7 +889,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   disabledButton: {
-    opacity: 0.8,
+    opacity: 0.6,
   },
   buttonInner: {
     width: 50,
@@ -905,7 +905,7 @@ const styles = StyleSheet.create({
   },
   capturedButtonsContainer: {
     position: 'absolute',
-    bottom: 28,
+    bottom: 24,
     flexDirection: 'row',
     justifyContent: 'space-around',
     width: '100%',
