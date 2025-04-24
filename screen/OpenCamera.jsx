@@ -864,8 +864,8 @@ const styles = StyleSheet.create({
   overlay: {
     position: 'absolute',
     top: 50,
-    left: 2,
-    right: 2,
+    left: 4,
+    right: 4,
     alignItems: 'center',
   },
   text: {
@@ -877,7 +877,7 @@ const styles = StyleSheet.create({
   },
   buttonContainer: {
     position: 'absolute',
-    bottom: 52,
+    bottom: 48,
     alignSelf: 'center',
   },
   captureButton: {
@@ -889,10 +889,10 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   disabledButton: {
-    opacity: 0.6,
+    opacity: 0.8,
   },
   buttonInner: {
-    width: 50,
+    width: 48,
     height: 50,
     borderRadius: 30,
     backgroundColor: 'white',
@@ -909,7 +909,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-around',
     width: '100%',
-    paddingHorizontal: 20,
+    paddingHorizontal: 24,
   },
   button: {
     backgroundColor: 'rgba(0, 0, 0, 0.7)',
@@ -919,7 +919,7 @@ const styles = StyleSheet.create({
   },
   buttonText: {
     color: 'white',
-    fontSize: 14,
+    fontSize: 16,
   },
   landmarkScroll: {
     position: 'absolute',
