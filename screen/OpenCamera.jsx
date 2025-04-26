@@ -944,21 +944,21 @@ const styles = StyleSheet.create({
   },
   landmarksSvg: {
     position: 'absolute',
-    top: 2,
-    left: 2,
-    right: 2,
-    bottom: 2,
+    top: 4,
+    left: 4,
+    right: 4,
+    bottom: 4,
   },
   permissionContainer: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: 'black',
-    padding: 22,
+    padding: 20,
   },
   permissionText: {
     color: 'white',
-    fontSize: 14,
+    fontSize: 16,
     marginBottom: 22,
     textAlign: 'center',
   },
@@ -975,7 +975,7 @@ const styles = StyleSheet.create({
   // Improved styles for the flip camera button
   flipButton: {
     position: 'absolute',
-    top: 45,
+    top: 42,
     right: 25,
     backgroundColor: 'rgba(0, 0, 0, 0.8)',
     padding: 12,
