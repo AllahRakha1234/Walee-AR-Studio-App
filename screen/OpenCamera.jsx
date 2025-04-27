@@ -975,10 +975,10 @@ const styles = StyleSheet.create({
   // Improved styles for the flip camera button
   flipButton: {
     position: 'absolute',
-    top: 42,
-    right: 25,
+    top: 40,
+    right: 26,
     backgroundColor: 'rgba(0, 0, 0, 0.8)',
-    padding: 12,
+    padding: 14,
     borderRadius: 25,
     justifyContent: 'center',
     alignItems: 'center',
@@ -986,7 +986,7 @@ const styles = StyleSheet.create({
   },
   flipButtonText: {
     color: 'white',
-    fontSize: 16,
+    fontSize: 14,
     fontWeight: 'bold',
   },
   // Enhanced debug information display
