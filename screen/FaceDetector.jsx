@@ -37,7 +37,6 @@ const FaceDetectorScreen = () => {
         tempFilePath
       );
 
-      console.log('Processing image at paht:', tempFilePath);
 
       // Process the image to detect faces
       const options = {
@@ -145,7 +144,7 @@ const FaceDetectorScreen = () => {
               x2={faceLandmarks.rightEyePosition.x}
               y2={faceLandmarks.rightEyePosition.y}
               stroke="yellow"
-              strokeWidth="2"
+              strokeWidth="3"
             />
           )}
           
@@ -167,7 +166,7 @@ const FaceDetectorScreen = () => {
               x2={faceLandmarks.rightEyePosition.x}
               y2={faceLandmarks.rightEyePosition.y}
               stroke="yellow"
-              strokeWidth="2"
+              strokeWidth="3"
             />
           )}
         </Svg>
@@ -221,18 +220,18 @@ const styles = StyleSheet.create({
   },
   button: {
     position: 'absolute',
-    bottom: 32,
+    bottom: 30,
     alignSelf: 'center',
     backgroundColor: 'rgba(0, 0, 0, 0.7)',
-    padding: 14,
-    borderRadius: 10,
+    padding: 12,
+    borderRadius: 12,
   },
   buttonText: {
     color: 'white',
-    fontSize: 16,
+    fontSize: 14,
   },
   disabledButton: {
-    opacity: 0.7,
+    opacity: 0.8,
   },
   landmarksOverlayContainer: {
     position: 'absolute',
