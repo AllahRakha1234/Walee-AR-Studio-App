@@ -985,22 +985,22 @@ const styles = StyleSheet.create({
     zIndex: 10,
   },
   flipButtonText: {
-    color: 'white',
-    fontSize: 14,
+    color: 'blue',
+    fontSize: 16,
     fontWeight: 'bold',
   },
   // Enhanced debug information display
   debugContainer: {
     position: 'absolute',
-    bottom: 150,
-    left: 20,
+    bottom: 148,
+    left: 16,
     backgroundColor: 'rgba(0, 0, 0, 0.8)',
-    padding: 10,
+    padding: 12,
     borderRadius: 5,
   },
   debugText: {
     color: 'white',
-    fontSize: 16,
+    fontSize: 18,
     marginBottom: 5,
     fontWeight: 'bold',
   },
