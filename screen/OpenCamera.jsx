@@ -889,10 +889,10 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   disabledButton: {
-    opacity: 0.8,
+    opacity: 0.6,
   },
   buttonInner: {
-    width: 48,
+    width: 50,
     height: 50,
     borderRadius: 30,
     backgroundColor: 'white',
@@ -905,7 +905,7 @@ const styles = StyleSheet.create({
   },
   capturedButtonsContainer: {
     position: 'absolute',
-    bottom: 24,
+    bottom: 26,
     flexDirection: 'row',
     justifyContent: 'space-around',
     width: '100%',
@@ -913,7 +913,7 @@ const styles = StyleSheet.create({
   },
   button: {
     backgroundColor: 'rgba(0, 0, 0, 0.7)',
-    padding: 10,
+    padding: 12,
     borderRadius: 10,
     marginHorizontal: 12,
   },
@@ -932,7 +932,7 @@ const styles = StyleSheet.create({
   },
   landmarkText: {
     color: 'red',
-    fontSize: 14,
+    fontSize: 16,
     marginBottom: 6,
   },
   landmarksOverlayContainer: {
