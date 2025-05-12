@@ -223,15 +223,15 @@ const styles = StyleSheet.create({
     bottom: 30,
     alignSelf: 'center',
     backgroundColor: 'rgba(0, 0, 0, 0.7)',
-    padding: 14,
+    padding: 12,
     borderRadius: 12,
   },
   buttonText: {
-    color: 'white',
+    color: 'red',
     fontSize: 14,
   },
   disabledButton: {
-    opacity: 0.8,
+    opacity: 0.7,
   },
   landmarksOverlayContainer: {
     position: 'absolute',

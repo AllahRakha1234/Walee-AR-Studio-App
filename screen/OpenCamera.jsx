@@ -927,12 +927,12 @@ const styles = StyleSheet.create({
     right: 20,
     maxHeight: 200,
     backgroundColor: 'rgba(0, 0, 0, 0.7)',
-    padding: 12,
-    borderRadius: 10,
+    padding: 14,
+    borderRadius: 12,
   },
   landmarkText: {
     color: 'red',
-    fontSize: 16,
+    fontSize: 14,
     marginBottom: 6,
   },
   landmarksOverlayContainer: {
@@ -954,7 +954,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: 'black',
-    padding: 20,
+    padding: 16,
   },
   permissionText: {
     color: 'white',
