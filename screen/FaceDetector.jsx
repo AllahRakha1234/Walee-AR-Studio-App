@@ -242,16 +242,16 @@ const styles = StyleSheet.create({
   },
   landmarksSvg: {
     position: 'absolute',
-    top: 0,
-    left: 0,
+    top: 2,
+    left: 2,
     right: 0,
     bottom: 0,
   },
   statusContainer: {
     position: 'absolute',
     top: 36,
-    left: 2,
-    right: 2,
+    left: 4,
+    right: 4,
     alignItems: 'center',
   },
   statusText: {
