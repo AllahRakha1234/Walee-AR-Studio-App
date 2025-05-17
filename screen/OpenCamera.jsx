@@ -944,8 +944,8 @@ const styles = StyleSheet.create({
   },
   landmarksSvg: {
     position: 'absolute',
-    top: 4,
-    left: 4,
+    top: 6,
+    left: 6,
     right: 4,
     bottom: 4,
   },
@@ -954,7 +954,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: 'black',
-    padding: 16,
+    padding: 18,
   },
   permissionText: {
     color: 'white',
@@ -986,7 +986,7 @@ const styles = StyleSheet.create({
   },
   flipButtonText: {
     color: 'white',
-    fontSize: 18,
+    fontSize: 16,
     fontWeight: 'semibold',
   },
   // Enhanced debug information display
@@ -995,8 +995,8 @@ const styles = StyleSheet.create({
     bottom: 150,
     left: 24,
     backgroundColor: 'rgba(0, 0, 0, 0.8)',
-    padding: 10,
-    borderRadius: 5,
+    padding: 12,
+    borderRadius: 6,
   },
   debugText: {
     color: 'white',
