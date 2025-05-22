@@ -954,11 +954,11 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: 'black',
-    padding: 18,
+    padding: 16,
   },
   permissionText: {
     color: 'white',
-    fontSize: 18,
+    fontSize: 16,
     marginBottom: 20,
     textAlign: 'center',
   },
@@ -966,7 +966,7 @@ const styles = StyleSheet.create({
     position: 'absolute',
     bottom: -24,
     color: 'white',
-    fontSize: 16,
+    fontSize: 18,
     backgroundColor: 'rgba(0,0,0,0.7)',
     paddingHorizontal: 10,
     paddingVertical: 5,
@@ -993,7 +993,7 @@ const styles = StyleSheet.create({
   debugContainer: {
     position: 'absolute',
     bottom: 150,
-    left: 24,
+    left: 22,
     backgroundColor: 'rgba(0, 0, 0, 0.8)',
     padding: 12,
     borderRadius: 6,
@@ -1001,7 +1001,7 @@ const styles = StyleSheet.create({
   debugText: {
     color: 'white',
     fontSize: 16,
-    marginBottom: 5,
+    marginBottom: 6,
     fontWeight: 'bold',
   },
 });
