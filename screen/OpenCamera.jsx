@@ -966,9 +966,9 @@ const styles = StyleSheet.create({
     position: 'absolute',
     bottom: -24,
     color: 'white',
-    fontSize: 18,
+    fontSize: 16,
     backgroundColor: 'rgba(0,0,0,0.7)',
-    paddingHorizontal: 10,
+    paddingHorizontal: 12,
     paddingVertical: 5,
     borderRadius: 5,
   },
@@ -978,7 +978,7 @@ const styles = StyleSheet.create({
     top: 40,
     right: 26,
     backgroundColor: 'rgba(0, 0, 0, 0.8)',
-    padding: 16,
+    padding: 18,
     borderRadius: 25,
     justifyContent: 'center',
     alignItems: 'center',
@@ -986,7 +986,7 @@ const styles = StyleSheet.create({
   },
   flipButtonText: {
     color: 'white',
-    fontSize: 16,
+    fontSize: 18,
     fontWeight: 'semibold',
   },
   // Enhanced debug information display
@@ -995,7 +995,7 @@ const styles = StyleSheet.create({
     bottom: 150,
     left: 22,
     backgroundColor: 'rgba(0, 0, 0, 0.8)',
-    padding: 12,
+    padding: 16,
     borderRadius: 6,
   },
   debugText: {
