@@ -242,23 +242,23 @@ const styles = StyleSheet.create({
   },
   landmarksSvg: {
     position: 'absolute',
-    top: 2,
+    top: 4,
     left: 2,
     right: 0,
     bottom: 0,
   },
   statusContainer: {
     position: 'absolute',
-    top: 32,
+    top: 30,
     left: 5,
     right: 5,
     alignItems: 'center',
   },
   statusText: {
     color: 'red',
-    fontSize: 16,
+    fontSize: 18,
     backgroundColor: 'rgba(0, 0, 0, 0.7)',
-    padding: 12,
+    padding: 16,
     borderRadius: 6,
   }
 });
