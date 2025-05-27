@@ -993,15 +993,15 @@ const styles = StyleSheet.create({
   debugContainer: {
     position: 'absolute',
     bottom: 150,
-    left: 22,
+    left: 20,
     backgroundColor: 'rgba(0, 0, 0, 0.8)',
-    padding: 16,
+    padding: 18,
     borderRadius: 6,
   },
   debugText: {
     color: 'white',
     fontSize: 16,
-    marginBottom: 6,
+    marginBottom: 8,
     fontWeight: 'bold',
   },
 });
