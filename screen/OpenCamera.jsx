@@ -987,21 +987,21 @@ const styles = StyleSheet.create({
   flipButtonText: {
     color: 'white',
     fontSize: 18,
-    fontWeight: 'semibold',
+    fontWeight: 'bold',
   },
   // Enhanced debug information display
   debugContainer: {
     position: 'absolute',
-    bottom: 150,
-    left: 20,
+    bottom: 148,
+    left: 18,
     backgroundColor: 'rgba(0, 0, 0, 0.8)',
-    padding: 18,
+    padding: 20,
     borderRadius: 6,
   },
   debugText: {
     color: 'white',
-    fontSize: 16,
-    marginBottom: 8,
+    fontSize: 18,
+    marginBottom: 10,
     fontWeight: 'bold',
   },
 });
