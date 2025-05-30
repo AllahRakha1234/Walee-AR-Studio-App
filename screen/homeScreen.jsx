@@ -51,7 +51,7 @@ const styles = StyleSheet.create({
         fontSize: 32,
         fontWeight: 'semibold',
         color: '#FFA500',
-        marginBottom: 1,6
+        marginBottom: 18
     },
     grid: {
         alignItems: 'center',
@@ -73,7 +73,7 @@ const styles = StyleSheet.create({
     },
     cardText: {
         marginTop: 10,
-        fontSize: 16,
+        fontSize: 18,
         fontWeight: 'bold',
         color: '#333',
     },
