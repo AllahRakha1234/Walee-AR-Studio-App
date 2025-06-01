@@ -966,11 +966,11 @@ const styles = StyleSheet.create({
     position: 'absolute',
     bottom: -24,
     color: 'red',
-    fontSize: 16,
+    fontSize: 18,
     backgroundColor: 'rgba(0,0,0,0.7)',
-    paddingHorizontal: 12,
-    paddingVertical: 5,
-    borderRadius: 5,
+    paddingHorizontal: 14,
+    paddingVertical: 8,
+    borderRadius: 8,
   },
   // Improved styles for the flip camera button
   flipButton: {
@@ -986,22 +986,22 @@ const styles = StyleSheet.create({
   },
   flipButtonText: {
     color: 'white',
-    fontSize: 18,
+    fontSize: 16,
     fontWeight: 'bold',
   },
   // Enhanced debug information display
   debugContainer: {
     position: 'absolute',
     bottom: 148,
-    left: 18,
+    left: 16,
     backgroundColor: 'rgba(0, 0, 0, 0.8)',
-    padding: 20,
-    borderRadius: 6,
+    padding: 18,
+    borderRadius: 8,
   },
   debugText: {
     color: 'white',
     fontSize: 18,
-    marginBottom: 10,
+    marginBottom: 12,
     fontWeight: 'bold',
   },
 });

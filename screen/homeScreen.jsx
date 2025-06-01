@@ -48,10 +48,10 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
     },
     title: {
-        fontSize: 32,
+        fontSize: 30,
         fontWeight: 'semibold',
         color: '#FFA500',
-        marginBottom: 18
+        marginBottom: 16
     },
     grid: {
         alignItems: 'center',
@@ -61,7 +61,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#FFF',
         width: 120,
         height: 120,
-        margin: 18,
+        margin: 16,
         borderRadius: 16,
         alignItems: 'center',
         justifyContent: 'center',
