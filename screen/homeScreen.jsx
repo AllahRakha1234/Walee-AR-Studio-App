@@ -49,7 +49,7 @@ const styles = StyleSheet.create({
     },
     title: {
         fontSize: 30,
-        fontWeight: 'semibold',
+        fontWeight: 'bold',
         color: '#FFA500',
         marginBottom: 16
     },
@@ -61,14 +61,14 @@ const styles = StyleSheet.create({
         backgroundColor: '#FFF',
         width: 120,
         height: 120,
-        margin: 16,
-        borderRadius: 16,
+        margin: 18,
+        borderRadius: 18,
         alignItems: 'center',
         justifyContent: 'center',
         shadowColor: '#000',
         shadowOffset: { width: 0, height: 2 },
         shadowOpacity: 0.7,
-        shadowRadius: 4,
+        shadowRadius: 6,
         elevation: 5,
     },
     cardText: {

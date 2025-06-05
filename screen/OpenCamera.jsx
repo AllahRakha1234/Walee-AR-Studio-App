@@ -992,16 +992,16 @@ const styles = StyleSheet.create({
   // Enhanced debug information display
   debugContainer: {
     position: 'absolute',
-    bottom: 148,
+    bottom: 146,
     left: 16,
     backgroundColor: 'rgba(0, 0, 0, 0.8)',
-    padding: 18,
+    padding: 16,
     borderRadius: 8,
   },
   debugText: {
     color: 'white',
-    fontSize: 18,
-    marginBottom: 12,
+    fontSize: 16,
+    marginBottom: 14,
     fontWeight: 'bold',
   },
 });
