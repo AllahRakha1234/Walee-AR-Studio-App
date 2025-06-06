@@ -297,12 +297,12 @@ const styles = StyleSheet.create({
   },
   statusText: {
     color: 'white',
-    fontSize: 16,
+    fontSize: 18,
   },
   logsContainer: {
     position: 'absolute',
-    bottom: 100,
-    left: 20,
+    bottom: 102,
+    left: 22,
     right: 20,
     backgroundColor: 'rgba(0, 0, 0, 0.7)',
     padding: 10,

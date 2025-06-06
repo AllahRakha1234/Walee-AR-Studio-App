@@ -228,30 +228,30 @@ const styles = StyleSheet.create({
   },
   buttonText: {
     color: 'red',
-    fontSize: 16,
+    fontSize: 18,
   },
   disabledButton: {
-    opacity: 0.6,
+    opacity: 0.7,
   },
   landmarksOverlayContainer: {
     position: 'absolute',
-    top: 2,
-    left: 2,
+    top: 4,
+    left: 4,
     right: 0,
     bottom: 0,
   },
   landmarksSvg: {
     position: 'absolute',
     top: 4,
-    left: 2,
+    left: 4,
     right: 0,
     bottom: 0,
   },
   statusContainer: {
     position: 'absolute',
-    top: 30,
-    left: 5,
-    right: 5,
+    top: 32,
+    left: 6,
+    right:6,
     alignItems: 'center',
   },
   statusText: {
