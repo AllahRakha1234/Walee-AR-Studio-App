@@ -227,16 +227,16 @@ const styles = StyleSheet.create({
     borderRadius: 12,
   },
   buttonText: {
-    color: 'red',
-    fontSize: 18,
+    color: 'blue',
+    fontSize: 16,
   },
   disabledButton: {
-    opacity: 0.7,
+    opacity: 0.5,
   },
   landmarksOverlayContainer: {
     position: 'absolute',
-    top: 4,
-    left: 4,
+    top: 6,
+    left: 6,
     right: 0,
     bottom: 0,
   },
@@ -255,10 +255,10 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   statusText: {
-    color: 'red',
+    color: 'green',
     fontSize: 18,
     backgroundColor: 'rgba(0, 0, 0, 0.7)',
-    padding: 16,
+    padding: 14,
     borderRadius: 6,
   }
 });
