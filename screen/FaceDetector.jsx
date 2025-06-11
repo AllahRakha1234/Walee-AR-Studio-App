@@ -223,15 +223,15 @@ const styles = StyleSheet.create({
     bottom: 24,
     alignSelf: 'center',
     backgroundColor: 'rgba(0, 0, 0, 0.7)',
-    padding: 18,
+    padding: 16,
     borderRadius: 12,
   },
   buttonText: {
-    color: 'blue',
+    color: 'green',
     fontSize: 16,
   },
   disabledButton: {
-    opacity: 0.5,
+    opacity: 0.6,
   },
   landmarksOverlayContainer: {
     position: 'absolute',
@@ -242,23 +242,23 @@ const styles = StyleSheet.create({
   },
   landmarksSvg: {
     position: 'absolute',
-    top: 4,
-    left: 4,
+    top: 6,
+    left: 6,
     right: 0,
     bottom: 0,
   },
   statusContainer: {
     position: 'absolute',
-    top: 32,
-    left: 6,
+    top: 30,
+    left: 8,
     right:6,
     alignItems: 'center',
   },
   statusText: {
-    color: 'green',
+    color: 'red',
     fontSize: 18,
-    backgroundColor: 'rgba(0, 0, 0, 0.7)',
-    padding: 14,
+    backgroundColor: 'rgba(0, 0, 0, 0.6)',
+    padding: 16,
     borderRadius: 6,
   }
 });
