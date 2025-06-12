@@ -966,7 +966,7 @@ const styles = StyleSheet.create({
     position: 'absolute',
     bottom: -24,
     color: 'red',
-    fontSize: 18,
+    fontSize: 16,
     backgroundColor: 'rgba(0,0,0,0.7)',
     paddingHorizontal: 14,
     paddingVertical: 8,
@@ -986,7 +986,7 @@ const styles = StyleSheet.create({
   },
   flipButtonText: {
     color: 'white',
-    fontSize: 16,
+    fontSize: 18,
     fontWeight: 'bold',
   },
   // Enhanced debug information display
@@ -999,7 +999,7 @@ const styles = StyleSheet.create({
     borderRadius: 8,
   },
   debugText: {
-    color: 'white',
+    color: 'red',
     fontSize: 16,
     marginBottom: 14,
     fontWeight: 'bold',
