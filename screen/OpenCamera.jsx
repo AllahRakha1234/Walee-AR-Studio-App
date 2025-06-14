@@ -863,21 +863,21 @@ const styles = StyleSheet.create({
   },
   overlay: {
     position: 'absolute',
-    top: 50,
+    top: 48,
     left: 4,
     right: 4,
     alignItems: 'center',
   },
   text: {
     color: 'white',
-    fontSize: 16,
+    fontSize: 18,
     backgroundColor: 'rgba(0,0,0,0.6)',
-    padding: 10,
-    borderRadius: 10,
+    padding: 12,
+    borderRadius: 12,
   },
   buttonContainer: {
     position: 'absolute',
-    bottom: 48,
+    bottom: 50,
     alignSelf: 'center',
   },
   captureButton: {
@@ -889,7 +889,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   disabledButton: {
-    opacity: 0.6,
+    opacity: 0.8,
   },
   buttonInner: {
     width: 50,
@@ -905,7 +905,7 @@ const styles = StyleSheet.create({
   },
   capturedButtonsContainer: {
     position: 'absolute',
-    bottom: 26,
+    bottom: 24,
     flexDirection: 'row',
     justifyContent: 'space-around',
     width: '100%',
@@ -913,9 +913,9 @@ const styles = StyleSheet.create({
   },
   button: {
     backgroundColor: 'rgba(0, 0, 0, 0.7)',
-    padding: 12,
+    padding: 14,
     borderRadius: 10,
-    marginHorizontal: 12,
+    marginHorizontal: 14,
   },
   buttonText: {
     color: 'white',

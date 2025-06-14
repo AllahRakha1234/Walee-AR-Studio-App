@@ -48,10 +48,10 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
     },
     title: {
-        fontSize: 30,
+        fontSize: 32,
         fontWeight: 'bold',
         color: '#FFA500',
-        marginBottom: 18
+        marginBottom: 16
     },
     grid: {
         alignItems: 'center',
@@ -72,8 +72,8 @@ const styles = StyleSheet.create({
         elevation: 5,
     },
     cardText: {
-        marginTop: 12,
-        fontSize: 16,
+        marginTop: 14,
+        fontSize: 18,
         fontWeight: 'bold',
         color: '#333',
     },
