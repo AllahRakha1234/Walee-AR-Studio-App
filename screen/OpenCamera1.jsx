@@ -297,12 +297,12 @@ const styles = StyleSheet.create({
   },
   statusText: {
     color: 'white',
-    fontSize: 18,
+    fontSize: 16,
   },
   logsContainer: {
     position: 'absolute',
     bottom: 102,
-    left: 22,
+    left: 20,
     right: 20,
     backgroundColor: 'rgba(0, 0, 0, 0.7)',
     padding: 10,
@@ -325,18 +325,18 @@ const styles = StyleSheet.create({
   faceDataText: {
     color: 'white',
     fontSize: 12,
-    marginBottom: 5,
+    marginBottom: 6,
   },
   text: {
     color: 'white',
-    fontSize: 18,
+    fontSize: 16,
     textAlign: 'center',
     marginTop: 50,
   },
   button: {
     backgroundColor: '#2196F3',
     padding: 10,
-    borderRadius: 5,
+    borderRadius: 6,
     marginTop: 20,
   },
   buttonText: {
