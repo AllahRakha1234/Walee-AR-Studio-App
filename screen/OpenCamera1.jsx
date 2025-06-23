@@ -324,24 +324,24 @@ const styles = StyleSheet.create({
   },
   faceDataText: {
     color: 'white',
-    fontSize: 12,
+    fontSize: 16,
     marginBottom: 6,
   },
   text: {
     color: 'white',
     fontSize: 16,
     textAlign: 'center',
-    marginTop: 50,
+    marginTop: 48,
   },
   button: {
     backgroundColor: '#2196F3',
     padding: 10,
-    borderRadius: 6,
+    borderRadius: 8,
     marginTop: 20,
   },
   buttonText: {
     color: 'white',
-    fontSize: 16,
+    fontSize: 18,
     textAlign: 'center',
   },
 });

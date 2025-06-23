@@ -48,10 +48,10 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
     },
     title: {
-        fontSize: 30,
+        fontSize: 28,
         fontWeight: 'bold',
         color: '#FFA500',
-        marginBottom: 16
+        marginBottom: 18
     },
     grid: {
         alignItems: 'center',
@@ -61,13 +61,13 @@ const styles = StyleSheet.create({
         backgroundColor: '#FFF',
         width: 120,
         height: 120,
-        margin: 16,
-        borderRadius: 16,
+        margin: 18,
+        borderRadius: 18,
         alignItems: 'center',
         justifyContent: 'center',
         shadowColor: '#000',
         shadowOffset: { width: 0, height: 2 },
-        shadowOpacity: 0.7,
+        shadowOpacity: 0.8,
         shadowRadius: 6,
         elevation: 5,
     },
