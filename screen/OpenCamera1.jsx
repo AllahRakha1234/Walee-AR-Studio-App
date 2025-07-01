@@ -324,19 +324,19 @@ const styles = StyleSheet.create({
   },
   faceDataText: {
     color: 'white',
-    fontSize: 16,
-    marginBottom: 6,
+    fontSize: 18,
+    marginBottom: 8,
   },
   text: {
     color: 'white',
-    fontSize: 16,
+    fontSize: 18,
     textAlign: 'center',
-    marginTop: 48,
+    marginTop: 44,
   },
   button: {
     backgroundColor: '#2196F3',
     padding: 10,
-    borderRadius: 8,
+    borderRadius: 10,
     marginTop: 20,
   },
   buttonText: {
