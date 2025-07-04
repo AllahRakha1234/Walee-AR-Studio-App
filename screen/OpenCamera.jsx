@@ -927,13 +927,13 @@ const styles = StyleSheet.create({
     right: 20,
     maxHeight: 200,
     backgroundColor: 'rgba(0, 0, 0, 0.7)',
-    padding: 14,
-    borderRadius: 12,
+    padding: 16,
+    borderRadius: 14,
   },
   landmarkText: {
     color: 'red',
     fontSize: 14,
-    marginBottom: 6,
+    marginBottom: 8,
   },
   landmarksOverlayContainer: {
     position: 'absolute',
@@ -946,8 +946,8 @@ const styles = StyleSheet.create({
     position: 'absolute',
     top: 6,
     left: 6,
-    right: 4,
-    bottom: 4,
+    right: 6,
+    bottom: 6,
   },
   permissionContainer: {
     flex: 1,
