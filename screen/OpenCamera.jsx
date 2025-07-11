@@ -944,22 +944,22 @@ const styles = StyleSheet.create({
   },
   landmarksSvg: {
     position: 'absolute',
-    top: 6,
-    left: 6,
-    right: 6,
-    bottom: 6,
+    top: 8,
+    left: 8,
+    right: 8,
+    bottom: 8,
   },
   permissionContainer: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: 'black',
-    padding: 16,
+    padding: 18,
   },
   permissionText: {
     color: 'white',
     fontSize: 16,
-    marginBottom: 20,
+    marginBottom: 18,
     textAlign: 'center',
   },
   processingText: {

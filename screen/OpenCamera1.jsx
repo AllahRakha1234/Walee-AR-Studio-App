@@ -310,7 +310,7 @@ const styles = StyleSheet.create({
     maxHeight: 150,
   },
   logText: {
-    color: 'white',
+    color: 'red',
     fontSize: 12,
     marginBottom: 2,
   },
@@ -323,7 +323,7 @@ const styles = StyleSheet.create({
     borderRadius: 12,
   },
   faceDataText: {
-    color: 'white',
+    color: 'blue',
     fontSize: 18,
     marginBottom: 10,
   },
@@ -335,13 +335,13 @@ const styles = StyleSheet.create({
   },
   button: {
     backgroundColor: '#2196F3',
-    padding: 12,
-    borderRadius: 12,
+    padding: 14,
+    borderRadius: 14,
     marginTop: 20,
   },
   buttonText: {
     color: 'white',
-    fontSize: 18,
+    fontSize: 16,
     textAlign: 'center',
   },
 });
